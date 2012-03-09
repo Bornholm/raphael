@@ -16,16 +16,16 @@ var setup = {
             copy: "copy.js"
         },
         output: {
-            "raphael-min.js": function () {
+            "build/raphael-min.js": function () {
                 return this.copy + "\n" + minify(this.eve + this.core + this.svg + this.vml);
             },
-            "raphael.js": function () {
+            "build/raphael.js": function () {
                 return this.copy + "\n" + this.eve + "\n\n" + this.core + "\n\n" + this.svg + "\n\n" + this.vml;
             },
-            "raphael.pro-min.js": function () {
+            "build/raphael.pro-min.js": function () {
                 return this.copy + "\n" + minify(this.eve + this.core + this.svg);
             },
-            "raphael.pro.js": function () {
+            "build/raphael.pro.js": function () {
                 return this.copy + "\n" + this.eve + "\n\n" + this.core + "\n\n" + this.svg ;
             },
         }
