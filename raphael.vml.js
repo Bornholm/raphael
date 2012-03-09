@@ -211,7 +211,12 @@ window.Raphael.vml && function (R) {
             var textpathStyle = o.textpath.style;
             params.font && (textpathStyle.font = params.font);
             params["font-family"] && (textpathStyle.fontFamily = '"' + params["font-family"].split(",")[0].replace(/^['"]+|['"]+$/g, E) + '"');
-            params["font-size"] && (textpathStyle.fontSize = params["font-size"]);
+           
+            //Dirty Hack William
+            var fontSize = params["font-size"];
+            fontSize && ( fontSize = (""+fontSize).match(/\d+(?:\.\d*)?(?=px)/) );
+            params["font-size"] && (textpathStyle.fontSize = toFloat( (fontSize && fontSize[0]) || 10 ));
+
             params["font-weight"] && (textpathStyle.fontWeight = params["font-weight"]);
             params["font-style"] && (textpathStyle.fontStyle = params["font-style"]);
         }
