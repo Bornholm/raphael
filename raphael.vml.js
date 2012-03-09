@@ -325,7 +325,7 @@ window.Raphael.vml && function (R) {
             res.paper.canvas.style.display = E;
             var span = res.paper.span,
                 m = 100,
-                fontSize = a.font && a.font.match(/\d+(?:\.\d*)?(?=px)/);
+                fontSize = a.font && a.font.match(/\d+(?:\.\d*)?(?=(%|[a-z]{2}))/); // Dirty Hack William
             s = span.style;
             a.font && (s.font = a.font);
             a["font-family"] && (s.fontFamily = a["font-family"]);

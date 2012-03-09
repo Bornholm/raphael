@@ -2,7 +2,7 @@
 
 /*
 	To use this script, must have: 
-	uglify.js (npm install uglify)
+	uglify.js (npm install uglify or npm install)
 	eve/eve.js (get it from https://github.com/DmitryBaranovskiy/eve) 
 */
 

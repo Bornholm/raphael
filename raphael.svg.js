@@ -538,10 +538,16 @@ window.Raphael.svg && function (R) {
                             break;
                         }
                     default:
-                        att == "font-size" && (value = toInt(value, 10) + "px");
-                        var cssrule = att.replace(/(\-.)/g, function (w) {
-                            return w.substring(1).toUpperCase();
-                        });
+                    	
+                    	 if (att == "font-size") { // Dirty Hack William - Gestion avancée des tailles de polices
+                         	value = (/(\d+\.?\d*)(%|[a-z]{2})?/).exec(""+value);
+                         	value = toFloat( value ? value[1] : 10, 10) + (value[2] || "px");   	
+                         }
+                     
+                         var cssrule = att.replace(/(\-.)/g, function (w) {
+                             return w.substring(1).toUpperCase();
+                         });
+                         
                         node.style[cssrule] = value;
                         o._.dirty = 1;
                         node.setAttribute(att, value);
